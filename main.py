@@ -13,4 +13,3 @@ if __name__ == '__main__':
     # Export a txt file of QA pairs
     export_df_to_txt(df_final, output_txt_filepath)
     df_final.to_csv(output_csv_filepath)
-
