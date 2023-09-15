@@ -1,3 +1,31 @@
+"""
+utils.py
+--------
+
+Description:
+This utility module contains a collection of helper functions for file path generation,
+text cleaning, and data processing. It provides functionalities for preparing and exporting
+QA data. Specifically, it includes functions to:
+- Generate complete file paths based on directory, sub-folder, and filename.
+- Clean specified text columns in a DataFrame by removing HTML tags and special characters.
+- Process QA data by reading from multiple CSV files, merging with industry data,
+  filtering and sorting.
+- Export processed data to a text file.
+
+Functions:
+- generate_file_path(base_path: str, sub_folder: Optional[str] = None, filename: Optional[str] = None) -> str
+- clean_text_columns(df: pd.DataFrame, columns: List[str]) -> pd.DataFrame
+- prepare_qa_data(csv_filepaths: List[str], df_industry: pd.DataFrame, selected_cols: Optional[List[str]] = None) -> pd.DataFrame
+- export_df_to_txt(df: pd.DataFrame, file_path: str) -> None
+
+Modules:
+- os: Provides a way of using operating system dependent functionality like reading or writing to the file system.
+- re: Provides regular expression matching operations for string parsing and manipulation.
+- pandas: Provides high-performance, easy-to-use data structures and data analysis tools.
+- typing: Provides runtime support for type hints, enhancing code readability and reusability.
+"""
+
+
 # Standard library imports
 import os  # Provides a way of using operating system dependent functionality like reading or writing to the file system
 import re  # Provides regular expression matching operations for string parsing and manipulation
