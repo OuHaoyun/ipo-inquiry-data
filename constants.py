@@ -17,6 +17,7 @@ qa_csv_filepaths = [generate_file_path(data_dir, csv_sub_folder, filename) for f
 output_txt_filepath = generate_file_path(output_dir, filename=output_txt_filename)
 output_csv_filepath = generate_file_path(output_dir, filename=output_csv_filename)
 
+# Select relevant columns to be read from QA data
 selected_columns = [
         "RN",
         "S_INFO_CODE",
