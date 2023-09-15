@@ -1,1 +1,2 @@
+# pandas is used for data manipulation and analysis, compatible with version 2.0.3 or minor updates
 pandas~=2.0.3
