@@ -1,6 +1,14 @@
+import os
 import pandas as pd
-# from pandas import DataFrame
 import re
+
+
+def generate_file_path(base_path, sub_folder=None, filename=None):
+    if sub_folder:
+        base_path = os.path.join(base_path, sub_folder)
+    if filename:
+        return os.path.join(base_path, filename)
+    return base_path
 
 
 def clean_text_columns(df, columns):
@@ -23,15 +31,7 @@ def clean_text_columns(df, columns):
 def prepare_qa_data(
     csv_filepaths,
     df_industry,
-    selected_cols=[
-        "RN",
-        "S_INFO_CODE",
-        "S_INFO_NAME",
-        "PROB_ID",
-        "ANSW_TXT",
-        "PROB_TXT",
-        "SUP_ANSW_TXT",
-    ],
+    selected_cols=None,
 ):
     processed_dfs = []  # List to store processed DataFrames
 
