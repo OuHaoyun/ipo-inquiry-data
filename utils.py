@@ -1,9 +1,17 @@
 import os
-import pandas as pd
 import re
+
+import pandas as pd
 
 
 def generate_file_path(base_path, sub_folder=None, filename=None):
+    """
+
+    :param base_path:
+    :param sub_folder:
+    :param filename:
+    :return:
+    """
     if sub_folder:
         base_path = os.path.join(base_path, sub_folder)
     if filename:
@@ -33,7 +41,7 @@ def prepare_qa_data(
     df_industry,
     selected_cols=None,
 ):
-    processed_dfs = []  # List to store processed DataFrames
+    processed_dfs_list = []  # List to store processed DataFrames
 
     data_type = {"RN": "object", "PROB_ID": "object", "S_INFO_CODE": "object"}
 
@@ -64,13 +72,11 @@ def prepare_qa_data(
         df_cleaned = clean_text_columns(df_yysw, text_cols)
 
         # Append the cleaned DataFrame to the list
-        processed_dfs.append(df_cleaned)
+        processed_dfs_list.append(df_cleaned)
 
-        # Concat the processed dfs and sort by 'PROB_ID'
-        df_final = pd.concat(processed_dfs, ignore_index=True)
-        df_final = df_final.sort_values(by="PROB_ID", ascending=True).reset_index(
-            drop=True
-        )
+    # Concat the processed dfs and sort by 'PROB_ID'
+    df_final = pd.concat(processed_dfs_list, ignore_index=True)
+    df_final = df_final.sort_values(by="PROB_ID", ascending=True).reset_index(drop=True)
 
     return df_final
 
