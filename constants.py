@@ -1,4 +1,4 @@
-from utility import generate_file_path
+from utils import generate_file_path
 
 # Define base directories and sub-folders
 data_dir = '/Users/haoyunou/Desktop/ms-security/IPO业务问询项目/data/inputs'

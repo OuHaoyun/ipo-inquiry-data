@@ -1,5 +1,5 @@
 import pandas as pd
-from utility import prepare_qa_data, export_df_to_txt
+from utils import prepare_qa_data, export_df_to_txt
 from constants import (excel_industry_filepath, qa_csv_filepaths, selected_columns,
                        output_csv_filepath, output_txt_filepath)
 
