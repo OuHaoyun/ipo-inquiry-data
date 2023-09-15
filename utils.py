@@ -1,8 +1,12 @@
-import os
-import re
-from typing import List, Optional
+# Standard library imports
+import os  # Provides a way of using operating system dependent functionality like reading or writing to the file system
+import re  # Provides regular expression matching operations for string parsing and manipulation
 
-import pandas as pd
+# For type hinting and annotations
+from typing import List, Optional  # Provides runtime support for type hints, enhancing code readability and reusability
+
+# Third-party imports
+import pandas as pd  # Provides high-performance, easy-to-use data structures and data analysis tools
 
 
 def generate_file_path(
